@@ -6,7 +6,6 @@ var postsRouter = require ('./routes/posts');
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/ms-blogging-site");
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

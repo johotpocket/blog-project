@@ -10,12 +10,13 @@ class PostBlog extends Component {
         </div>
         <div className="blog-box">
         <label>el blago</label>
-          <input
-          type="text" className="form-control" id="" placeholder="start blogging, fool"/>
+          <textarea className="blog-box" cols="50" rows="10"></textarea>
         </div>
       </div>
     );
   }
 }
+
+
 
 export default PostBlog;
