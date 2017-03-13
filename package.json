@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "babel-node server.js",
+    "client": "babel-node start-client.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/johotpocket/blog-project/issues"
   },
-  "homepage": "https://github.com/johotpocket/blog-project#readme"
+  "homepage": "https://github.com/johotpocket/blog-project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "concurrently": "^3.4.0",
+    "express": "^4.15.2",
+    "mongoose": "^4.8.6"
+  }
 }

@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main-nav {
+  background-color: cyan;
+  padding-top: 1px;
+  border-radius: 30px;
+}
+
+.navbar-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px
+}
+
+.nav-item {
+  color: white;
+}
+
+.active-nav-btn {
+  font-size: 22px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.my-image {
+  max-width: 200px;
+}
+
+.home-box {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-box {
+  display: flex;
+  justify-content: space-between;
+}
