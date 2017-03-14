@@ -5,7 +5,7 @@ class AboutContainer extends Component {
   render() {
     return (
       <div>
-        <h2> Wecome to AboutContainer </h2>
+        <h2> This is the story of my life </h2>
       </div>
     );
   }

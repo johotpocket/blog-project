@@ -8,6 +8,10 @@ the goal of this project is to create a basic blogging website.
 
 - index.js is what our html page renders
 
+- using gomockingbird, we created a rough wireframe for what we want the site to look like.
+
+- our blog page should have submit functionality, as well as as a comments section
+
 ___
 
 We'll Be following an IRL path of sticky notes for our worklog. We will be attempting to avoid:

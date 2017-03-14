@@ -36,7 +36,31 @@ body {
   justify-content: center;
 }
 
+.home-box-children {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home-image {
+  max-width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .blog-box {
   display: flex;
   justify-content: space-between;
+}
+
+.history-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
 }

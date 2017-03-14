@@ -14,5 +14,5 @@ app.set('port', process.env.PORT || 3001);
 app.use('/api/posts', postsRouter);
 
 app.listen(app.get('port'), function(){
-  console.log("app running on port ", app.get('port'))
+  console.log("node server running on port ", app.get('port'))
 });

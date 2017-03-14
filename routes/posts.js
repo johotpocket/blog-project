@@ -2,6 +2,7 @@ var express = require('express');
 var Router = new express.Router();
 var Post = require ('../models/post')
 
+//we can chain call types together under a single thing here.
 Router.route('/')
   .get(function(req, res){
     Post.find(function(err, postData){
