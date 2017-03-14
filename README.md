@@ -4,7 +4,7 @@ the goal of this project is to create a basic blogging website.
 
 - CRUD: implementing modifiable entries for the blog
 
-- Multiple pages: About me, Home, Blog, Create new entry for Blog
+- Multiple pages: About me, Home, Blog, View One Blog, Create new entry for Blog
 
 - index.js is what our html page renders
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router, browserHistory } from 'react-router';
 import Home from './HomeContainer';
-import Blog from './BlogContainer';
+import AllBlogsContainer from './AllBlogsContainer';
 import About from './AboutContainer';
 import PostContainer from './PostContainer';
 import Hello from './Hello';
@@ -18,7 +18,7 @@ ReactDOM.render((
         <Route path="hello" component={Hello}/>
       </Route>
       <Route path="/about" component={About} />
-      <Route path="/blog" component={Blog} />
+      <Route path="/blog" component={AllBlogsContainer} />
       <Route path="/postablog" component={PostContainer} />
     </Route>
   </Router>
