@@ -10,7 +10,7 @@ var AllPostsContainer = React.createClass({
     }
   },
 
-  LoadPostsFromServer: function() {
+  loadPostsFromServer: function() {
     $.ajax({
       url: '/api/posts',
       method: 'GET'
@@ -18,17 +18,30 @@ var AllPostsContainer = React.createClass({
       this.setState({ posts: data })
     }.bind(this))
   },
+  deletePost: function(faqspwr) {
+    $.ajax({
+      url: 'api/posts/' + faqspwr,
+      method: 'DELETE'
+    }).done(function(data){
+      console.log(data, "success deleting the post!");
+      this.loadPostsFromServer();
+    }.bind(this))
+  },
 
   componentWillMount: function(){
-    this.LoadPostsFromServer();
+    this.loadPostsFromServer();
   },
 
   render: function() {
     return (
       <div>
-        <h1> Hello from AllPostsContainer, look at all these posts? </h1>
-        { this.state.posts ? <PostList posts={this.state.posts}/> : null }
-        <Link to="/postapost" activeClassName="active-nav-btn"> Post New Entry </Link>
+        <div>
+          <h1> Hello from AllPostsContainer, look at all these posts? </h1>
+          { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
+        </div>
+        <div>
+          <Link to="/postapost" activeClassName="active-nav-btn"> Post New Entry </Link>
+        </div>
       </div>
     )
    }

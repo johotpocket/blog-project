@@ -1,6 +1,7 @@
 import React from 'react';
 import PostForm from '../Views/PostForm';
 import $ from 'jquery';
+import {browserHistory} from 'react-router';
 
 
 var PostContainer = React.createClass({
@@ -30,6 +31,7 @@ var PostContainer = React.createClass({
       method: 'POST',
       data: data,
     }).done(function(data){
+      browserHistory.push('/blog')
       console.log(data, "success blogger?")
     })
   },

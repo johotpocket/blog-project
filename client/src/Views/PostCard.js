@@ -6,6 +6,7 @@ var PostCard = function(props) {
     <div>
       <Link to={ "/viewablog/" + props.id } > { props.title } </Link>
         <p> { props.content } </p>
+        <button onClick={() => props.deletePost(props.id)} className="btn btn-alarm">Delete</button>
     </div>
   )
 };

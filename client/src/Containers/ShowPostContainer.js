@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
+import {browserHistory} from 'react-router';
 
 var ShowPostContainer = React.createClass({
   getInitialState: function(){
@@ -24,7 +25,7 @@ render: function() {
   return (
     <div>
       <h1> { this.state.post ? this.state.post.title : "loading" } </h1>
-      <p> { this.props.params.blog_id } </p>
+      <p> { this.state.post ? this.state.post.content : "still loading" } </p>
       <Link to="/blog" activeClassName="active-nav-btn"> Return to Blog Archive </Link>
     </div>
   )

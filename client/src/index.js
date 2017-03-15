@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Router, browserHistory } from 'react-router';
+import { Route, Router, IndexRoute, browserHistory } from 'react-router';
 import Home from './Containers/HomeContainer';
 import AllPostsContainer from './Containers/AllPostsContainer';
 import About from './Containers/AboutContainer';
@@ -14,6 +14,7 @@ import './index.css';
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
       <Route path="/home" component={Home}>
 //routes can have child routes that display more stuff with the parent route (below it or whatever)
         <Route path="hello" component={Hello}/>
