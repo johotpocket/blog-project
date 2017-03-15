@@ -24,4 +24,14 @@ We'll Be following an IRL path of sticky notes for our worklog. We will be attem
 
 ---
 
-Flex and other styling will mostly be left for later.
+After some construction, we refactored: files of similar function went into folders. This makes things much cleaner.
+
+---
+
+Some file paths of note:
+
+- PostCard is exported to PostList
+
+- PostList is exported to AllPostsContainer
+
+-AllPostsContainer is exported to index.js, along with just about everything else. index.js shows our routes.

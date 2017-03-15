@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Skills from './skills';
-import Experience from './experience';
-import Contact from './contactInfo';
+import Skills from '../skills';
+import Experience from '../experience';
+import Contact from '../contactInfo';
 
 class HomeContainer extends Component {
   render() {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import PostForm from './PostForm';
+import PostForm from '../PostForm';
 import $ from 'jquery';
-
-
 
 
 var PostContainer = React.createClass({

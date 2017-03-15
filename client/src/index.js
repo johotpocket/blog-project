@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router, browserHistory } from 'react-router';
 import Home from './HomeContainer';
-import AllBlogsContainer from './AllBlogsContainer';
+import AllPostsContainer from './AllPostsContainer';
 import About from './AboutContainer';
 import PostContainer from './PostContainer';
+import ShowPostContainer from './ShowPostContainer'
 import Hello from './Hello';
 import App from './App';
 import './index.css';
@@ -18,8 +19,9 @@ ReactDOM.render((
         <Route path="hello" component={Hello}/>
       </Route>
       <Route path="/about" component={About} />
-      <Route path="/blog" component={AllBlogsContainer} />
-      <Route path="/postablog" component={PostContainer} />
+      <Route path="/blog" component={AllPostsContainer} />
+      <Route path="/postapost" component={PostContainer} />
+      <Route path="/viewablog/:blog_id" component={ShowPostContainer} />
     </Route>
   </Router>
 ), document.getElementById('root'));
