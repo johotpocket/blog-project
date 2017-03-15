@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import $ from 'jquery';
-import PostList from '../PostList';
+import PostList from '../Views/PostList';
 import { Link } from 'react-router';
 
 var AllPostsContainer = React.createClass({

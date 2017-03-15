@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import Skills from '../skills';
-import Experience from '../experience';
-import Contact from '../contactInfo';
+import Skills from '../Views/skills';
+import Experience from '../Views/experience';
+import Contact from '../Views/contactInfo';
 
 class HomeContainer extends Component {
   render() {
@@ -18,7 +17,7 @@ class HomeContainer extends Component {
           <p> pie </p>
         </div>
         <div>
-          <img className="home-image" src="https://www.watchcartoononline.io/thumbs/Adventure-Time-Season-6-Episode-40-Orgalorg.jpg"></img>
+          <img className="home-image" src="https://www.watchcartoononline.io/thumbs/Adventure-Time-Season-6-Episode-40-Orgalorg.jpg" alt="presentation"></img>
         </div>
         <div className="home-box">
           <h2> Wow Im the best </h2>

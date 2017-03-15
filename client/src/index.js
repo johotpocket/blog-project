@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router, browserHistory } from 'react-router';
-import Home from './HomeContainer';
-import AllPostsContainer from './AllPostsContainer';
-import About from './AboutContainer';
-import PostContainer from './PostContainer';
-import ShowPostContainer from './ShowPostContainer'
+import Home from './Containers/HomeContainer';
+import AllPostsContainer from './Containers/AllPostsContainer';
+import About from './Containers/AboutContainer';
+import PostContainer from './Containers/PostContainer';
+import ShowPostContainer from './Containers/ShowPostContainer'
 import Hello from './Hello';
 import App from './App';
 import './index.css';

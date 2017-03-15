@@ -7,7 +7,7 @@ var Navbar = React.createClass({
     <nav className="main-nav">
       <div className="navbar-flex">
       <div>
-        <img className="my-image" src="http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/A-G/aardvark-walking.jpg"/>
+        <img  className="my-image" src="http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/A-G/aardvark-walking.jpg" alt="presentation"/>
       </div>
       <div className="div-class-items">
        <Link to="/home" activeClassName="active-nav-btn" className="nav-item"> HOME </Link>
