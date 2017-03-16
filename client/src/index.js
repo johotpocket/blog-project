@@ -5,7 +5,10 @@ import Home from './Containers/HomeContainer';
 import AllPostsContainer from './Containers/AllPostsContainer';
 import About from './Containers/AboutContainer';
 import PostContainer from './Containers/PostContainer';
-import ShowPostContainer from './Containers/ShowPostContainer'
+import ShowPostContainer from './Containers/ShowPostContainer';
+import EditPostContainer from './Containers/EditPostContainer';
+import SignupContainer from './UserAuth/SignupContainer';
+import LoginContainer from './UserAuth/LoginContainer';
 import Hello from './Hello';
 import App from './App';
 import './index.css';
@@ -23,6 +26,9 @@ ReactDOM.render((
       <Route path="/blog" component={AllPostsContainer} />
       <Route path="/postapost" component={PostContainer} />
       <Route path="/viewablog/:blog_id" component={ShowPostContainer} />
+      <Route path="/editpost/:blog_id" component={EditPostContainer} />
+      <Route path="/signup" component={SignupContainer} />
+      <Route path="/login" component={LoginContainer} />
     </Route>
   </Router>
 ), document.getElementById('root'));

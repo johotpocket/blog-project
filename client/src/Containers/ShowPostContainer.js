@@ -1,7 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
-import {browserHistory} from 'react-router';
 
 var ShowPostContainer = React.createClass({
   getInitialState: function(){

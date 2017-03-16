@@ -16,8 +16,8 @@ var Navbar = React.createClass({
       </div>
       </div>
     </nav>
-  )
-}
+    )
+  }
 });
 
 export default Navbar;
