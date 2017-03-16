@@ -20,9 +20,15 @@
   },
   "homepage": "https://github.com/johotpocket/blog-project#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.1",
     "concurrently": "^3.4.0",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
-    "mongoose": "^4.8.6"
+    "express-session": "^1.15.1",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.8.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }

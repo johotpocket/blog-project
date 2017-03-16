@@ -12,7 +12,7 @@ var LoginContainer = React.createClass({
     }
   },
 
-  updateUsername: function(email) {
+  updateEmail: function(email) {
       this.setState({ email: email })
   },
   updatePassword: function(password) {
@@ -30,8 +30,13 @@ var LoginContainer = React.createClass({
       method: 'POST',
       data: data,
     }).done(function(data){
-      browserHistory.push('/home')
-      console.log(data, "login achieved")
+      console.log(data, "data response from trying to log in")
+     if (data._id) {
+       browserHistory.push('/home')
+     } else {
+       alert(data.message)
+       browserHistory.push('/login')
+     }
     })
   },
 

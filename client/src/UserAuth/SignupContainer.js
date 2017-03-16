@@ -11,7 +11,7 @@ var SignupContainer = React.createClass({
       password: null
     }
   },
-  updateUsername: function(email) {
+  updateEmail: function(email) {
     this.setState({ email: email })
   },
   updatePassword: function(password) {
@@ -29,8 +29,15 @@ var SignupContainer = React.createClass({
       method: 'POST',
       data: data,
     }).done(function(data){
-      browserHistory.push('/home')
-      console.log(data, "you signed up, hooray")
+        console.log(data, "data response from trying to sign up")
+      if (data._id) {
+        browserHistory.push('/home')
+      } else {
+        alert(data.message)
+        browserHistory.push('/signup')
+      }
+
+
     })
   },
   render: function() {
