@@ -34,6 +34,7 @@ body {
 .home-box {
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid black;
 }
 
 .home-box-children {
@@ -47,6 +48,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 20px;
+  border: 1px solid;
 
 }
 
@@ -58,6 +61,20 @@ body {
 .history-group {
   display: flex;
   justify-content: space-around;
+}
+
+.my-container-experience {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.my-container-skills {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .contact-info {

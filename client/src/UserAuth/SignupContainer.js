@@ -5,6 +5,7 @@ import {browserHistory} from 'react-router';
 
 var SignupContainer = React.createClass({
 
+//the container for the signup page
   getInitialState: function() {
     return {
       email: null,
@@ -29,10 +30,11 @@ var SignupContainer = React.createClass({
       method: 'POST',
       data: data,
     }).done(function(data){
-        console.log(data, "data response from trying to sign up")
       if (data._id) {
+        console.log(data, "sign up successful")
         browserHistory.push('/home')
       } else {
+        console.log(data, "sign up failure")
         alert(data.message)
         browserHistory.push('/signup')
       }

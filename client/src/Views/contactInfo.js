@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 
+//our contact info that sits on the bottom of our home page
 class Contact extends Component {
   render() {
     return (

@@ -3,7 +3,7 @@ import EditForm from '../Views/EditForm';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 
-
+//our page for editing existing posts
 var EditPostContainer = React.createClass({
 
   getInitialState: function() {

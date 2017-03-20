@@ -3,7 +3,7 @@ import PostForm from '../Views/PostForm';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 
-
+//our "post new entry" page
 var PostContainer = React.createClass({
 
   getInitialState: function() {

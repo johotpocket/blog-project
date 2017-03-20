@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 
+//our about page
 class AboutContainer extends Component {
   render() {
     return (

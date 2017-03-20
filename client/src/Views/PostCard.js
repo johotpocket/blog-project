@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+//the layout for each blog post
 var PostCard = function(props) {
   return (
     <div>

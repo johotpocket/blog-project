@@ -1,5 +1,6 @@
 import React from 'react';
 
+//the client form for the signup page
 var SignupForm = React.createClass ({
   render() {
     return (

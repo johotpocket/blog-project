@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 
 var LoginContainer = React.createClass({
 
+//the container for the login page
   getInitialState: function() {
     return {
       email: null,
@@ -30,10 +31,11 @@ var LoginContainer = React.createClass({
       method: 'POST',
       data: data,
     }).done(function(data){
-      console.log(data, "data response from trying to log in")
      if (data._id) {
+       console.log(data, "log in successful")
        browserHistory.push('/home')
      } else {
+       console.log(data, "log in failure")
        alert(data.message)
        browserHistory.push('/login')
      }

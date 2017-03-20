@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
+//the blueprint to create new user logins, or to check against existing ones.
+
 var UserSchema = new mongoose.Schema({
   local: {
     email: String,

@@ -1,5 +1,6 @@
 import React from 'react';
 
+//the form for the edit container (for the client)
 var EditForm = React.createClass ({
   render() {
     return (

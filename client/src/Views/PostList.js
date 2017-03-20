@@ -1,6 +1,7 @@
 import React from 'react';
 import PostCard from './PostCard';
 
+//the form for the main blog page ( for the client )
 var PostList = React.createClass({
   render: function(){
     var self = this

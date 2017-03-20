@@ -13,6 +13,7 @@ import Hello from './Hello';
 import App from './App';
 import './index.css';
 
+//all our website routes. all of these urls point towards our containers.
 
 ReactDOM.render((
   <Router history={browserHistory}>

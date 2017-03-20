@@ -1,5 +1,6 @@
 import React from 'react';
 
+//the client form for the login page
 var LoginForm = React.createClass({
   render() {
     return (

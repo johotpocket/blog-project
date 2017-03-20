@@ -3,6 +3,7 @@ import $ from 'jquery';
 import PostList from '../Views/PostList';
 import { Link } from 'react-router';
 
+//our main blog page, showing all the entries
 var AllPostsContainer = React.createClass({
   getInitialState: function(){
     return {

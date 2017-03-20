@@ -2,6 +2,7 @@ var express = require('express');
 var Router = new express.Router();
 var Post = require ('../models/post')
 
+//our CRUD functions. get, delete, and so on.
 //we can chain call types together under a single thing here.
 Router.route('/')
   .get(function(req, res){

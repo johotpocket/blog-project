@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+//our persistent navigation bar that sits on top of most pages
 var Navbar = React.createClass({
   render: function(){
     return(

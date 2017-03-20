@@ -1,5 +1,6 @@
 import React from 'react';
 
+//the form for the post container. (for the client)
 var PostForm = React.createClass ({
   render() {
     return (

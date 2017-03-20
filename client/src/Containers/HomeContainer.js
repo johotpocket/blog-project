@@ -3,6 +3,7 @@ import Skills from '../Views/skills';
 import Experience from '../Views/experience';
 import Contact from '../Views/contactInfo';
 
+//our home page
 class HomeContainer extends Component {
   render() {
     return (
@@ -22,7 +23,11 @@ class HomeContainer extends Component {
         <div className="home-box">
           <h2> Wow Im the best </h2>
         </div>
-        <div className="history-group">
+        <div className="container history-group">
+          <h2> Skills </h2>
+          <h2> Experience </h2>
+        </div>
+        <div className="container history-group">
          < Skills />
          < Experience />
         </div>

@@ -2,6 +2,8 @@ var User = require('../models/user');
 
 module.exports = function(app, passport){
 
+//our login and signup functions
+
 app.post('/api/signup', function(req, res, next) {
       passport.authenticate('local-signup', function(err, user, info) {
         if (err) {

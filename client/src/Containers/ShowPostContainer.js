@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 
+//our single blog post view, with a return to main blog page button
 var ShowPostContainer = React.createClass({
   getInitialState: function(){
     return{

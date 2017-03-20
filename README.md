@@ -1,32 +1,47 @@
-___Blog Project___
+# Blog Project
 
 the goal of this project is to create a basic blogging website.
 
-- CRUD: implementing modifiable entries for the blog
+__step one: building the basic skeleton (or wireframe) of our site__
 
-- Multiple pages: About me, Home, Blog, View One Blog, Create new entry for Blog
+for this step, we used a website called "gomockingbird" to throw together a mockup of what we wanted our site to look like. This isn't a functional version of our site, but it's very important to plan out a design before we start coding. Feature Creep is a scary thing.
 
-- index.js is what our html page renders
+our website will have:
 
-- using gomockingbird, we created a rough wireframe for what we want the site to look like.
+- a home page
+- an "about me" page
+- a blog main view page (listing all the blog posts, each with an edit and a delete button. there will also be a "submit new post" button that leads to a submit page)
+- a blog post single view page (showing just one post and its contents)
+- a new post page (to submit a new entry)
+- a blog post edit page (a new post form, but with the post's contents in the parameters for us to edit)
 
-- our blog page should have submit functionality, as well as as a comments section
+__step two: creating a react app__
 
-___
+if you haven't yet, install react through npm (Node Project Manager.
 
-We'll Be following an IRL path of sticky notes for our worklog. We will be attempting to avoid:
+`npm install -g create-react-app`
 
-- Feature Creep
+the `-g` means global. if the above command doesn't work, you probably need to put `sudo` in front of your line and then enter your computer's password.
 
-- Adding tasks that our too large to do within a few hours at a time
+now, go to your desired directory and make a new react app.
 
-- "Going down the rabbit hole": jumping from one problem to the next, to the next, to the next, without ever really solving anything
+`create-react-app my-app`
 
----
+after that's done (it'll take a bit), go into the new folder it's made and `npm start`. This will launch a server that you can visit at http://localhost:3000
 
-After some construction, we refactored: files of similar function went into folders. This makes things much cleaner.
+__step three: installing node packages__
 
----
+`npm install --save "whatever the name of the package is"`
+
+after you install each one, check your root folder's package.json to make sure it's there.
+
+these are node modules that add certain functionalities to our project. We could make them ourselves, but others have already done the work for us. Countless hours of work avoided.
+
+
+
+__step four: creating components__
+
+
 
 Some file paths of note:
 
