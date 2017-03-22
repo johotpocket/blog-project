@@ -36,12 +36,12 @@ var AllPostsContainer = React.createClass({
   render: function() {
     return (
       <div>
-        <div>
+        <div className="container blog-container">
           <h1> Hello from AllPostsContainer, look at all these posts? </h1>
-          { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
+          <Link to="/postapost" activeClassName="active-nav-btn"> Post New Entry </Link>
         </div>
         <div>
-          <Link to="/postapost" activeClassName="active-nav-btn"> Post New Entry </Link>
+          { this.state.posts ? <PostList posts={this.state.posts} deletePost={this.deletePost}/> : null }
         </div>
       </div>
     )

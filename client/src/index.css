@@ -81,3 +81,24 @@ body {
   display: flex;
   justify-content: space-around;
 }
+
+.about-container {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  border-bottom: 1px solid black;
+}
+
+.blog-post-container {
+  border: 1px solid black;
+}
+
+.about-title {
+  border-bottom: 1px solid black;
+}
