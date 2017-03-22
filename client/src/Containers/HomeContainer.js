@@ -18,7 +18,7 @@ class HomeContainer extends Component {
           <p> pie </p>
         </div>
         <div>
-          <img className="home-image" src="https://www.watchcartoononline.io/thumbs/Adventure-Time-Season-6-Episode-40-Orgalorg.jpg" alt="presentation"></img>
+          <img className="home-image" src="http://i1.kym-cdn.com/entries/icons/facebook/000/016/729/large.jpg" alt="presentation"></img>
         </div>
         <div className="home-box">
           <h2> Wow Im the best </h2>

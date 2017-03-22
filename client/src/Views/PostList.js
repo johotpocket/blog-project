@@ -6,7 +6,7 @@ var PostList = React.createClass({
   render: function(){
     var self = this
     var allPostCards = this.props.posts.map(function(item, index){
-      return <PostCard key={index} title={item.title} content={item.content}
+      return <PostCard key={index} title={item.title}
       deletePost={self.props.deletePost}
               id={item._id}
              />

@@ -4,18 +4,18 @@ import React from 'react';
 var PostForm = React.createClass ({
   render() {
     return (
-      <div>
-        <h2> dummy </h2>
+      <div className="container">
+        <h2> SPEAK YOUR MIND, BARE YOUR SOUL </h2>
           <form onSubmit={this.props.handleSubmit}>
             <div>
-              <label>title of blog</label>
+              <label>title</label>
               <input onChange={ (event) => this.props.updateTitle(event.target.value)}
-              type="text" className="form-control" id="" placeholder="title"/>
+              type="text" className="form-control input-title" id="" placeholder="title"/>
             </div>
             <div>
-              <label>content of blog</label>
-              <input onChange={ (event) => this.props.updateContent(event.target.value)}
-              type="text" className="form-control" id="" placeholder="content"/>
+              <label>content</label>
+              <textarea onChange={ (event) => this.props.updateContent(event.target.value)}
+              type="text" className="input-content" id="" placeholder="content"/>
             </div>
             <button type="submit" className="btn btn-default">Submit</button>
         </form>

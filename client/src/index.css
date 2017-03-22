@@ -92,13 +92,24 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-content: space-around;
-  border-bottom: 1px solid black;
 }
 
 .blog-post-container {
   border: 1px solid black;
+  max-width: 20%;
 }
 
 .about-title {
   border-bottom: 1px solid black;
+}
+
+.input-title {
+  display: flex;
+  width: 800px;
+}
+
+.input-content {
+  display: flex;
+  height: 250px;
+  width: 800px;
 }
