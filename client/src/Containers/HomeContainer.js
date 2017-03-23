@@ -9,7 +9,9 @@ class HomeContainer extends Component {
     return (
       <div>
         <div className="home-box">
-          <h2> Alexander Murray's Blog's Blog </h2>
+          <div className="home-title">
+            <h2> Alexander Murray's Blog's Blog </h2>
+          </div>
             {this.props.children}
         </div>
         <div className="home-box-children">
@@ -24,15 +26,15 @@ class HomeContainer extends Component {
           <h2> Wow Im the best </h2>
         </div>
         <div className="container history-group">
-          <h2> Skills </h2>
-          <h2> Experience </h2>
+          <h4> Skills </h4>
+          <h4> Experience </h4>
         </div>
         <div className="container history-group">
          < Skills />
          < Experience />
         </div>
         <div className="home-box">
-          <h2> Contact Me! </h2>
+          <h3> Contact Me! </h3>
         </div>
         <div className="contact-info">
           < Contact />

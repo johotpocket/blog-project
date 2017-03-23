@@ -10,7 +10,7 @@ class AboutContainer extends Component {
           <h2> This is the story of my life </h2>
         </div>
         <div>
-          <img className="home-image" src="https://i.ytimg.com/vi/Jkom5Ajo0iQ/hqdefault.jpg" alt="presentation"></img>
+          <img className="about-image" src="https://static.wixstatic.com/media/c3092f_63c9532e914a4af68b887234e20d0c34.gif" alt="presentation"></img>
         </div>
         <div className="container about-container">
           <p> My name is Alex Murray, and I drift endlessly through the void of the internet </p>

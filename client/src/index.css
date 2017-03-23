@@ -5,9 +5,19 @@ body {
 }
 
 .main-nav {
-  background-color: cyan;
+  background-color: red;
   padding-top: 1px;
   border-radius: 30px;
+  animation-name: animation;
+  animation-duration: .2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes animation {
+  0% {background-color: red;}
+  50% {background-color: yellow;}
+  100% {background-color: red;}
 }
 
 .navbar-flex {
@@ -28,7 +38,21 @@ body {
 }
 
 .my-image {
-  max-width: 200px;
+  max-width: 150px;
+  border-radius: 20px;
+  border: 5px solid cyan;
+  animation-name: image-slidein;
+  animation-duration: 4s;
+
+}
+
+@keyframes image-slidein {
+  from {
+    margin-bottom: 500%;
+    width: 300%;}
+  to {
+    margin-left: 0%;
+    width: 100%;}
 }
 
 .home-box {
@@ -37,10 +61,23 @@ body {
   border-bottom: 1px solid black;
 }
 
+.home-title {
+  font: bold;
+}
+
 .home-box-children {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.about-image {
+  max-width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border: 1px solid;
 }
 
 .home-image {
@@ -50,7 +87,17 @@ body {
   margin-right: auto;
   border-radius: 20px;
   border: 1px solid;
+  animation-name: home-image-slidein;
+  animation-duration: 4s;
+}
 
+@keyframes home-image-slidein {
+  from {
+    margin-left: 150%;
+    width: 300%;}
+  to {
+    margin-left: 35%;
+    width: 100%;}
 }
 
 .blog-box {
@@ -95,8 +142,16 @@ body {
 }
 
 .blog-post-container {
+  display: flex;
   border: 1px solid black;
-  max-width: 20%;
+  max-width: 30%;
+  align-items: center;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.blog-post-buttons {
+  display: flex;
 }
 
 .about-title {
