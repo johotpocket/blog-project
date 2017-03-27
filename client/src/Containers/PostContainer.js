@@ -43,6 +43,7 @@ var PostContainer = React.createClass({
         < PostForm updateTitle={this.updateTitle}
                    updateContent={this.updateContent}
                    handleSubmit={this.handleSubmit}
+                   previewContent={this.state.content ? this.state.content : "no content yo"}
         />
       </div>
     )

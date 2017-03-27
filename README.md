@@ -15,6 +15,7 @@ our website will have:
 - a new post page (to submit a new entry)
 - a blog post edit page (a new post form, but with the post's contents in the parameters for us to edit)
 
+
 __step two: creating a react app__
 
 if you haven't yet, install react through npm (Node Project Manager.
@@ -29,6 +30,7 @@ now, go to your desired directory and make a new react app.
 
 after that's done (it'll take a bit), go into the new folder it's made and `npm start`. This will launch a server that you can visit at http://localhost:3000
 
+
 __step three: installing node packages__
 
 `npm install --save "whatever the name of the package is"`
@@ -38,9 +40,7 @@ after you install each one, check your root folder's package.json to make sure i
 these are node modules that add certain functionalities to our project. We could make them ourselves, but others have already done the work for us. Countless hours of work avoided.
 
 
-
 __step four: creating components__
-
 
 
 Some file paths of note:
@@ -50,5 +50,7 @@ Some file paths of note:
 - PostList is exported to AllPostsContainer
 
 -AllPostsContainer is exported to index.js, along with just about everything else. index.js shows our routes.
+
+-for posting blogs, we added markdown functionality. Our posts now display using markdown formatting, and accept markdown formatting in our edit page.
 
 ---

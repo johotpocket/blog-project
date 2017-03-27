@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 //the form for the post container. (for the client)
 var PostForm = React.createClass ({
@@ -19,6 +20,9 @@ var PostForm = React.createClass ({
             </div>
             <button type="submit" className="btn btn-default">Submit</button>
         </form>
+        <div>
+          <ReactMarkdown source={this.props.previewContent}/>
+        </div>
       </div>
     )
   }
