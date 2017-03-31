@@ -24,6 +24,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+// Express only serves static assets in production
+const isProd = process.env.NODE_ENV === 'production';
+const clientPath = isProd ? 'client/build' : 'client/public';
+
+if (isProd) {
+  app.use(express.static(clientPath));
+}
+
 app.use(session({
  secret: 'blahblahblah'
 })); // session secret
@@ -36,11 +44,15 @@ app.use(session({
 }));
 // routes ======================================================================
 require('./config/passport')(passport); // pass passport for configuration
-require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passpo
+require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 app.set('port', process.env.PORT || 3001);
 
 app.use('/api/posts', postsRouter);
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, clientPath, 'index.html'));
+});
 
 app.listen(app.get('port'), () => {
   console.log(`🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
