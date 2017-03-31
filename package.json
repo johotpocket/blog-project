@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run serverr\" \"npm run client\"",
     "start": "NODE_ENV=production nf start -p $PORT",
-    "server": "babel-node server.js",
+    "serverr": "babel-node server.js",
     "client": "babel-node start-client.js"
   },
   "repository": {
