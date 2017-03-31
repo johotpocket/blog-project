@@ -5,7 +5,7 @@ var postsRouter  = require ('./routes/posts');
 var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-var uriUtil      = require('mongod-uri')
+var uriUtil      = require('mongodb-uri')
 
 var mongoose = require('mongoose');
 
