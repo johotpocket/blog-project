@@ -5,9 +5,20 @@ var postsRouter  = require ('./routes/posts');
 var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
+var uriUtil      = require('mongod-uri')
 
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost/ms-blogging-site");
+
+var options = {
+server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
+var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/ms-blogging-site";
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+mongoose.connect(mongooseUri, options);
+
+app.set('port', (process.env.PORT || 3001));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -31,6 +42,6 @@ app.set('port', process.env.PORT || 3001);
 
 app.use('/api/posts', postsRouter);
 
-app.listen(app.get('port'), function(){
-  console.log("node server running on port ", app.get('port'))
+app.listen(app.get('port'), () => {
+  console.log(`🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
