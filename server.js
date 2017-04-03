@@ -1,7 +1,7 @@
 var express      = require('express');
 var app          = express();
 var bodyParser   = require('body-parser');
-var postsRouter  = require ('./routes/posts');
+var routes  = require ('./controllers/api/routes');
 var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
@@ -45,11 +45,11 @@ app.use(session({
 }));
 // routes ======================================================================
 require('./config/passport')(passport); // pass passport for configuration
-require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./controllers/api/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 app.set('port', process.env.PORT || 3001);
 
-app.use('/api/posts', postsRouter);
+routes(app);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, clientPath, 'index.html'));
