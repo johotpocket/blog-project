@@ -20,7 +20,7 @@ ReactDOM.render((
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="/home" component={Home}>
-//routes can have child routes that display more stuff with the parent route (below it or whatever)
+//routes can have child routes that display more stuff with the parent route (below it or whatever). "hello" isn't active
         <Route path="hello" component={Hello}/>
       </Route>
       <Route path="/about" component={About} />

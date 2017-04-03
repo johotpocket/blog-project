@@ -8,7 +8,7 @@
     "dev": "concurrently \"npm run serverr\" \"npm run client\"",
     "start": "NODE_ENV=production nf start -p $PORT",
     "serverr": "babel-node server.js",
-    "client": "babel-node start-client.js"
+    "client": "babel-node start-view.js"
   },
   "repository": {
     "type": "git",

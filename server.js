@@ -1,7 +1,7 @@
 var express      = require('express');
 var app          = express();
 var bodyParser   = require('body-parser');
-var postsRouter  = require ('./routes/posts');
+var routes  = require ('./controllers/api/routes');
 var passport     = require('passport');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
@@ -27,7 +27,7 @@ app.use(cookieParser());
 
 // Express only serves static assets in production
 const isProd = process.env.NODE_ENV === 'production';
-const clientPath = isProd ? 'client/build' : 'client/public';
+const clientPath = isProd ? 'view/build' : 'view/public';
 
 if (isProd) {
   app.use(express.static(clientPath));
@@ -45,11 +45,12 @@ app.use(session({
 }));
 // routes ======================================================================
 require('./config/passport')(passport); // pass passport for configuration
-require('./routes/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./controllers/api/userAuth.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 app.set('port', process.env.PORT || 3001);
 
-app.use('/api/posts', postsRouter);
+//app.use('/api/posts', postsRouter);
+routes(app);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, clientPath, 'index.html'));
