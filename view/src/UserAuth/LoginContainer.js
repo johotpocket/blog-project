@@ -1,36 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 import LoginForm from './LoginForm';
 import { browserHistory } from 'react-router';
 
-var LoginContainer = React.createClass({
+class LoginContainer extends Component{
 
 //the container for the login page
-  getInitialState: function() {
-    return {
+    state = {
       email: null,
       password: null
     }
-  },
 
-  updateEmail: function(email) {
+  updateEmail(email) {
       this.setState({ email: email })
-  },
-  updatePassword: function(password) {
+  }
+  updatePassword(password) {
       this.setState({ password: password })
-  },
+  }
 
-  handleSubmit: function(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    var data = {
+    const data = {
       email: this.state.email,
       password: this.state.password
     };
     $.ajax({
       url: '/api/login',
       method: 'POST',
-      data: data,
-    }).done(function(data){
+      data: data
+    }).done((data) => {
      if (data._id) {
        console.log(data, "log in successful")
        browserHistory.push('/home')
@@ -40,7 +38,7 @@ var LoginContainer = React.createClass({
        browserHistory.push('/login')
      }
     })
-  },
+  }
 
   render() {
     return (
@@ -52,6 +50,6 @@ var LoginContainer = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default LoginContainer;

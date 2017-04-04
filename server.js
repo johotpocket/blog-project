@@ -1,21 +1,21 @@
-var express      = require('express');
-var app          = express();
-var bodyParser   = require('body-parser');
-var routes  = require ('./controllers/api/routes');
-var passport     = require('passport');
-var cookieParser = require('cookie-parser');
-var session      = require('express-session');
-var uriUtil      = require('mongodb-uri');
-var path         = require('path');
+const express      = require('express');
+const app          = express();
+const bodyParser   = require('body-parser');
+const routes       = require ('./controllers/api/routes');
+const passport     = require('passport');
+const cookieParser = require('cookie-parser');
+const session      = require('express-session');
+const uriUtil      = require('mongodb-uri');
+const path         = require('path');
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var options = {
+const options = {
 server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
 replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
 };
-var mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/ms-blogging-site";
-var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+const mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/ms-blogging-site";
+const mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 mongoose.connect(mongooseUri, options);
 

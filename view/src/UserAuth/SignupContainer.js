@@ -1,27 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import SignupForm from './SignupForm';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 
-var SignupContainer = React.createClass({
+class SignupContainer extends Component{
 
 //the container for the signup page
-  getInitialState: function() {
-    return {
-      email: null,
-      password: null
-    }
-  },
-  updateEmail: function(email) {
-    this.setState({ email: email })
-  },
-  updatePassword: function(password) {
-    this.setState({ password: password })
-  },
+  state = {
+    email: null,
+    password: null
+  }
 
-  handleSubmit: function(e) {
+  updateEmail(email) {
+    this.setState({ email: email })
+  }
+  updatePassword(password) {
+    this.setState({ password: password })
+  }
+
+  handleSubmit(e) {
     e.preventDefault();
-    var data = {
+    const data = {
       email: this.state.email,
       password: this.state.password
     };
@@ -29,7 +28,7 @@ var SignupContainer = React.createClass({
       url: '/api/signup',
       method: 'POST',
       data: data,
-    }).done(function(data){
+    }).done((data) => {
       if (data._id) {
         console.log(data, "sign up successful")
         browserHistory.push('/home')
@@ -41,8 +40,8 @@ var SignupContainer = React.createClass({
 
 
     })
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div>
         < SignupForm updateEmail={this.updateEmail}
@@ -52,6 +51,6 @@ var SignupContainer = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default SignupContainer;

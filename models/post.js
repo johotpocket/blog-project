@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 //the blueprint for our blog posts.
 
-var PostSchema = new mongoose.Schema({
+const PostSchema = new mongoose.Schema({
   content: String,
   title: String
 });

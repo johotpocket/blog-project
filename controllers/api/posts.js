@@ -1,9 +1,9 @@
 //var express = require('express');
 //var Router = new express.Router();
-var Post = require ('../../models/post')
+const Post = require ('../../models/post')
 
-exports.all = function(req, res){
-  Post.find(function(err, postData){
+exports.all = (req, res) => {
+  Post.find((err, postData) =>{
     if(!postData) return res.status(404).send("no posts found");
     if(err){
       res.status(500).send(err, "error finding all posts");
@@ -13,14 +13,14 @@ exports.all = function(req, res){
   })
 }
 
-exports.create = function(req, res){
-  var newPost = new Post();
+exports.create = (req, res) =>{
+  let newPost = new Post();
   newPost.content = req.body.content;
   newPost.title = req.body.title;
 
   console.log(newPost, "ABOUT TO SAVE NEW POST");
 
-  newPost.save(function(err, data){
+  newPost.save((err, data) =>{
     if(!data) return res.status(404).send("failure creating post");
     if(err){
       res.status(500).send(err, "error making a post");
@@ -30,8 +30,8 @@ exports.create = function(req, res){
   })
 }
 
-exports.getOne = function(req, res){
-  Post.findById(req.params.post_id, function(err, data){
+exports.getOne = (req, res) =>{
+  Post.findById(req.params.post_id, (err, data) =>{
     if(!data) return res.status(404).send("failure finding post");
     if(err){
       res.status(500).send(err, "error finding that post");
@@ -41,8 +41,8 @@ exports.getOne = function(req, res){
   })
 }
 
-exports.adios = function(req, res){
-  Post.remove({ _id: req.params.post_id }, function(err, data){
+exports.adios = (req, res) =>{
+  Post.remove({ _id: req.params.post_id }, (err, data) =>{
     if(!data) return res.status(404).send("failure to eradicate");
     if(err){
       res.status(500).send(err, "can't do it");
@@ -52,8 +52,8 @@ exports.adios = function(req, res){
   })
 }
 
-exports.edit = function(req, res){
-  Post.findById(req.params.post_id, function(err, post){
+exports.edit = (req, res) =>{
+  Post.findById(req.params.post_id, (err, post) =>{
     if(!post) {
       res.status(404).send("failure to edit");
     }
@@ -63,9 +63,9 @@ exports.edit = function(req, res){
       post.content = req.body.content ? req.body.content: post.content;
       post.title = req.body.title ? req.body.title: post.title;
 
-      post.save(function(err, updatedPost){
+      post.save((err, updatedPost) =>{
         if(err){
-          console.log(err)
+            res.status(500).send(err, "error making a post");
         } else {
           res.json(updatedPost);
         }

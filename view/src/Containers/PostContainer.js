@@ -1,28 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PostForm from '../Views/PostForm';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 
 //our "post new entry" page
-var PostContainer = React.createClass({
+class PostContainer extends Component {
 
-  getInitialState: function() {
-    return {
-      content: null,
-      title: null
-    }
-  },
+  state = {
+    title: null,
+    content: null
+  }
 
-  updateContent: function(content) {
-    this.setState({ content: content })
-  },
-  updateTitle: function(title) {
+  updateTitle = this.updateTitle.bind(this)
+  handleSubmit = this.handleSubmit.bind(this)
+
+  updateContent = (content) => this.setState({ content })
+
+  updateTitle(title) {
     this.setState({ title: title})
-  },
+  }
 
-  handleSubmit: function(e) {
+
+  handleSubmit(e) {
     e.preventDefault();
-    var data = {
+    const data = {
       content: this.state.content,
       title: this.state.title
     };
@@ -30,14 +31,14 @@ var PostContainer = React.createClass({
       url: '/api/posts',
       method: 'POST',
       data: data,
-    }).done(function(data){
+    }).done((data) =>{
       browserHistory.push('/blog')
       console.log(data, "success blogger?")
     })
-  },
+  }
 
 
-  render: function() {
+  render() {
     return (
       <div>
         < PostForm updateTitle={this.updateTitle}
@@ -48,6 +49,6 @@ var PostContainer = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default PostContainer;

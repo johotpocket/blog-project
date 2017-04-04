@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 //the form for the post container. (for the client)
-var PostForm = React.createClass ({
+let PostForm = React.createClass ({
   render() {
     return (
       <div className="container">

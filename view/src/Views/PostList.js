@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PostCard from './PostCard';
 
 //the form for the main blog page ( for the client )
-var PostList = React.createClass({
-  render: function(){
-    var self = this
-    var allPostCards = this.props.posts.map(function(item, index){
+class PostList extends Component{
+  render() {
+    var allPostCards = this.props.posts.map((item, index) =>{
       return <PostCard key={index} title={item.title}
-      deletePost={self.props.deletePost}
+      deletePost={this.props.deletePost}
               id={item._id}
              />
     });
@@ -17,6 +16,6 @@ var PostList = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default PostList;

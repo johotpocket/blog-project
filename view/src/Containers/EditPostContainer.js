@@ -1,28 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import EditForm from '../Views/EditForm';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
 
 //our page for editing existing posts
-var EditPostContainer = React.createClass({
+class EditPostContainer extends Component{
 
-  getInitialState: function() {
-    return {
+    state = {
       content: null,
       title: null
     }
-  },
 
-  updateContent: function(content) {
-    this.setState({ content: content })
-  },
-  updateTitle: function(title) {
-    this.setState({ title: title})
-  },
+  handleSubmit = this.handleSubmit.bind(this)
 
-  handleSubmit: function(e) {
+  updateContent = (content) => this.setState({ content })
+  updateTitle = (title) => this.setState({ title })
+
+  handleSubmit(e) {
     e.preventDefault();
-    var data = {
+    const data = {
       content: this.state.content,
       title: this.state.title
     };
@@ -30,28 +26,32 @@ var EditPostContainer = React.createClass({
       url: '/api/posts/' + this.props.params.blog_id,
       method: 'PUT',
       data: data,
-    }).done(function(data){
-      browserHistory.push('/blog')
-      console.log(data, "success editing blogger?")
-    })
-  },
+    }).done((data) => browserHistory.push('/blog'))
+  }
 
-  componentWillMount: function(){
+  loadPostFromServer() {
+    fetch(`/api/posts/${this.props.params.blog_id}`)
+      .then(blob => blob.json())
+      .then(post => this.setState({ title: post.title, content: post.content  }))
+  }
+  componentWillMount() {
     this.loadPostFromServer();
-  },
+  }
 
-  loadPostFromServer: function() {
-    var self = this;
-    $.ajax({
-      url: '/api/posts/' + this.props.params.blog_id,
-      method: 'GET',
-    }).done(function(data){
-      self.setState({ title: data.title, content: data.content })
-    })
-  },
+  //the old way:
+
+  // loadPostFromServer() {
+  //   var self = this;
+  //   $.ajax({
+  //     url: '/api/posts/' + this.props.params.blog_id,
+  //     method: 'GET',
+  //   }).done((data) =>{
+  //     self.setState({ title: data.title, content: data.content })
+  //   })
+  // },
 
 
-  render: function() {
+  render() {
     return (
       <div>
         { this.state.title && this.state.content ? <EditForm updateTitle={this.updateTitle}
@@ -63,6 +63,6 @@ var EditPostContainer = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default EditPostContainer;

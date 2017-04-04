@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 //the client form for the login page
-var LoginForm = React.createClass({
+class LoginForm extends Component{
   render() {
     return (
       <div>
@@ -22,6 +22,6 @@ var LoginForm = React.createClass({
       </div>
     )
   }
-});
+};
 
 export default LoginForm;

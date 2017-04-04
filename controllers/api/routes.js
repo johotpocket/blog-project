@@ -1,6 +1,6 @@
-var posts = require('./posts');
+const posts = require('./posts');
 
-module.exports = function(app) {
+module.exports = (app) => {
   app.get('/api/posts', posts.all);
   app.post('/api/posts', posts.create);
   app.get('/api/posts/:post_id', posts.getOne);
