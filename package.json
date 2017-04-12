@@ -8,7 +8,8 @@
     "dev": "concurrently \"npm run serverr\" \"npm run client\"",
     "start": "NODE_ENV=production nf start -p $PORT",
     "serverr": "babel-node server.js",
-    "client": "babel-node start-client.js"
+    "client": "babel-node start-client.js",
+    "test": "mocha --no-deprecation"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,9 @@
     "mongoose": "^4.8.6",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0"
   }
 }

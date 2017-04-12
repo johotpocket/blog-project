@@ -58,3 +58,5 @@ app.get('*', function (req, res) {
 app.listen(app.get('port'), () => {
   console.log(`🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 at: http://localhost:${app.get('port')}/`); // eslint-disable-line no-console
 });
+
+module.exports = app;
