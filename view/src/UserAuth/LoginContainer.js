@@ -11,12 +11,10 @@ class LoginContainer extends Component{
       password: null
     }
 
-  updateEmail(email) {
-      this.setState({ email: email })
-  }
-  updatePassword(password) {
-      this.setState({ password: password })
-  }
+    handleSubmit = this.handleSubmit.bind(this)
+
+  updateEmail = (email) => this.setState({ email: email })
+  updatePassword = (password) => this.setState({ password: password })
 
   handleSubmit(e) {
     e.preventDefault();

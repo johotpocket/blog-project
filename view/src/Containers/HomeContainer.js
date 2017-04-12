@@ -5,6 +5,18 @@ import Contact from '../Views/contactInfo';
 
 //our home page
 class HomeContainer extends Component {
+  state = {user: null}
+  loadUserFromServer() {
+    fetch('/api/get_user')
+    .then(blob => blob.json())
+    .then(user => {
+      window.u = user
+      if (user.local) {
+        console.log(user)
+      }
+    })
+  }
+  componentDidMount =() => this.loadUserFromServer()
   render() {
     return (
       <div>

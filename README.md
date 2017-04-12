@@ -2,7 +2,7 @@
 
 the goal of this project is to create a basic blogging website.
 
-__step one: building the basic skeleton (or wireframe) of our site__
+__building the basic skeleton (or wireframe) of our site__
 
 for this step, we used a website called "gomockingbird" to throw together a mockup of what we wanted our site to look like. This isn't a functional version of our site, but it's very important to plan out a design before we start coding. Feature Creep is a scary thing.
 
@@ -16,7 +16,7 @@ our website will have:
 - a blog post edit page (a new post form, but with the post's contents in the parameters for us to edit)
 
 
-__step two: creating a react app__
+__creating a react app__
 
 if you haven't yet, install react through npm (Node Project Manager.
 
@@ -31,7 +31,7 @@ now, go to your desired directory and make a new react app.
 after that's done (it'll take a bit), go into the new folder it's made and `npm start`. This will launch a server that you can visit at http://localhost:3000
 
 
-__step three: installing node packages__
+__installing node packages__
 
 `npm install --save "whatever the name of the package is"`
 
@@ -40,7 +40,10 @@ after you install each one, check your root folder's package.json to make sure i
 these are node modules that add certain functionalities to our project. We could make them ourselves, but others have already done the work for us. Countless hours of work avoided.
 
 
-__step four: creating components__
+__begin construction, following the skeleton__
+
+You can start anywhere from here, but the home page is probably a good place. It'll likely have most of the links to the different parts of your website, and you won't have to worry about your blog database while you tinker with basic layouts and such here.
+
 
 
 Some file paths of note:

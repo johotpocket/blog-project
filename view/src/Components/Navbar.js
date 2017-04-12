@@ -13,6 +13,9 @@ const Navbar = (props) =>
          <Link to="/about" activeClassName="active-nav-btn" className="nav-item">  ABOUT </Link>
          <Link to="/blog" activeClassName="active-nav-btn" className="nav-item"> BLOG </Link>
         </div>
+        <div>
+          <p> {props.user} </p>
+        </div>
       </div>
     </nav>
 

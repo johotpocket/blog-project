@@ -28,6 +28,7 @@
     "express": "^4.15.2",
     "express-session": "^1.15.1",
     "foreman": "^2.0.0",
+    "jquery": "^3.2.1",
     "method-override": "^2.3.7",
     "mongodb-uri": "^0.9.7",
     "mongoose": "^4.8.6",

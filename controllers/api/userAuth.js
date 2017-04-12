@@ -39,4 +39,12 @@ app.post('/api/login', function(req, res, next) {
        });
      })(req, res, next);
    });
+app.get('/api/get_user', function(req, res) {
+    if (req.user) {
+      console.log("user logged in");
+      res.json (req.user)
+    }else{
+      res.json({message: "no logged in"})
+    }
+  })
 };
