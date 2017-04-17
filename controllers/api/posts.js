@@ -21,31 +21,28 @@ exports.create = (req, res) =>{
   console.log(newPost, "ABOUT TO SAVE NEW POST");
 
   newPost.save((err, data) =>{
-    if(!data) return res.status(404).send("failure creating post");
     if(err){
-      res.status(500).send(err, "error making a post");
+      res.send(err);
     } else {
-      res.json(data);
+      res.json({data: data, message: "post successfully added!"});
     }
   })
 }
 
-exports.getOne = (req, res) =>{
-  Post.findById(req.params.post_id, (err, data) =>{
-    if(!data) return res.status(404).send("failure finding post");
-    if(err){
-      res.status(500).send(err, "error finding that post");
+exports.getOne = (req, res) => {
+  Post.findById(req.params.post_id, (err, data) => {
+    if (err) {
+      res.send(err);
     } else {
       res.json(data);
     }
-  })
-}
+  });
+};
 
 exports.adios = (req, res) =>{
   Post.remove({ _id: req.params.post_id }, (err, data) =>{
-    if(!data) return res.status(404).send("failure to eradicate");
     if(err){
-      res.status(500).send(err, "can't do it");
+      res.send(err);
     } else {
       res.json({message: "successfully deleted the blog entry!"})
     }
@@ -54,25 +51,45 @@ exports.adios = (req, res) =>{
 
 exports.edit = (req, res) =>{
   Post.findById(req.params.post_id, (err, post) =>{
-    if(!post) {
-      res.status(404).send("failure to edit");
-    }
     if(err){
-      res.status(500).send(err, "can't do it");
+      res.send(err);
     } else {
       post.content = req.body.content ? req.body.content: post.content;
       post.title = req.body.title ? req.body.title: post.title;
 
       post.save((err, updatedPost) =>{
         if(err){
-            res.status(500).send(err, "error making a post");
+            console.log(err);
         } else {
-          res.json(updatedPost);
+          res.json({updatedPost, message: "Post Updated!"});
         }
       });
 
     }
   })
+};
+
+exports.createComment = (req, res) => {
+  var comment = new Comment();
+  comment.content = req.body.content;
+  comment.author = req.user ? req.user._id : testUserId;
+
+  comment.save((err, comment) => {
+    Post.findById(req.params.post_id, (err, post) => {
+      if (err) {
+        res.send(err);
+      } else {
+        post.comments.push(comment._id);
+        post.save((err, post) => {
+          if (err) {
+            res.send(err);
+          } else {
+            res.json(post);
+          }
+        });
+      }
+    });
+  });
 };
 
 

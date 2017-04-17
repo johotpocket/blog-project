@@ -35,7 +35,7 @@ class HomeContainer extends Component {
           <img className="home-image" src="http://i1.kym-cdn.com/entries/icons/facebook/000/016/729/large.jpg" alt="presentation"></img>
         </div>
         <div className="home-box">
-          <h2> Wow Im the best </h2>
+          <h2> Welcome to a website about me </h2>
         </div>
         <div className="container history-group">
           <h4> Skills </h4>

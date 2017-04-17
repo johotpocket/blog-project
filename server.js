@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express      = require('express');
 const app          = express();
 const bodyParser   = require('body-parser');
@@ -5,19 +6,9 @@ const routes       = require ('./controllers/api/routes');
 const passport     = require('passport');
 const cookieParser = require('cookie-parser');
 const session      = require('express-session');
-const uriUtil      = require('mongodb-uri');
 const path         = require('path');
-
-const mongoose = require('mongoose');
-
-const options = {
-server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
-replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
-};
-const mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/ms-blogging-site";
-const mongooseUri = uriUtil.formatMongoose(mongodbUri);
-
-mongoose.connect(mongooseUri, options);
+const connectDB    = require('./config/db-environment-setup')
+connectDB();
 
 app.set('port', (process.env.PORT || 3001));
 
