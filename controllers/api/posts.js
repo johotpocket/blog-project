@@ -1,10 +1,12 @@
 //var express = require('express');
 //var Router = new express.Router();
-const Post = require ('../../models/post')
+const Post = require ('../../models/post');
+const Comment = require ('../../models/comments');
 
 exports.all = (req, res) => {
-  Post.find((err, postData) =>{
-    if(!postData) return res.status(404).send("no posts found");
+  Post.find()
+  .populate('comments')
+  .exec((err, postData) =>{
     if(err){
       res.status(500).send(err, "error finding all posts");
     } else {
@@ -70,6 +72,7 @@ exports.edit = (req, res) =>{
 };
 
 exports.createComment = (req, res) => {
+  var testUserId = '58f521e75398b79657ac58a1'
   var comment = new Comment();
   comment.content = req.body.content;
   comment.author = req.user ? req.user._id : testUserId;
